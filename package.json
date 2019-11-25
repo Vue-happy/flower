@@ -11,6 +11,8 @@
     "babel": "^6.23.0",
     "babel-loader": "^8.0.6",
     "core-js": "^3.3.2",
+    "lib-flexible": "^0.3.2",
+    "postcss-px2rem": "^0.3.0",
     "stylus": "^0.54.7",
     "stylus-loader": "^3.0.2",
     "vue": "^2.6.10",
