@@ -1,14 +1,14 @@
 <template>
-  <div>
-    home
-  </div>
+  <Footer></Footer>
 </template>
-
-<script>
-
+  
+<script type="text/ecmascript-6">
+// import Footer from '../components/Footer/Footer'
+  export default {
+  
+  }
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-
+  
+<style lang="stylus" rel="stylesheet/stylus">
+  
 </style>

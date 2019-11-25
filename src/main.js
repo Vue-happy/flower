@@ -10,12 +10,16 @@ import Cart from '../src/pages/Cart'
 import Profile from '../src/pages/Profile'
 import Login from '../src/pages/Login'
 
+import Footer from '../src/components/Footer/Footer'
+
+
 //Vue全局注册组件的语法:Vue
 Vue.component('Home',Home)
 Vue.component('Sort',Sort)
 Vue.component('Cart',Cart)
 Vue.component('Profile',Profile)
 Vue.component('Login',Login)
+Vue.component('Footer',Footer)
 
 new Vue({
   render: h => h(App),
