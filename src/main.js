@@ -12,6 +12,12 @@ import Login from '../src/pages/Login'
 
 import Footer from '../src/components/Footer/Footer'
 
+// 注册vant全局组件
+import { Icon } from 'vant';
+import { Tabbar, TabbarItem } from "vant"
+
+Vue.use(Tabbar).use(TabbarItem);
+Vue.use(Icon);
 
 //Vue全局注册组件的语法:Vue
 Vue.component('Home',Home)

@@ -1,28 +1,36 @@
 <template>
-  <div class="footerNav">
-    <ul class="footerBox">
-      <li class="footerItem">1</li>
-      <li class="footerItem">2</li>
-      <li class="footerItem">3</li>
-      <li class="footerItem">4</li>
-    </ul>
+  <div class="footerNavBox">
+    <van-tabbar v-model="active" active-color="#07c160" inactive-color="#000" class="footerNav">
+      <van-tabbar-item  icon="home-o">标签</van-tabbar-item>
+      <van-tabbar-item icon="search">标签</van-tabbar-item>
+      <van-tabbar-item icon="freinds-o">标签</van-tabbar-item>
+      <van-tabbar-item icon="setting-o">标签</van-tabbar-item>
+    </van-tabbar>
   </div>
 </template>
-  
+
 <script type="text/ecmascript-6">
-  export default {
-  
+// import Vue from "vue";
+// import { Tabbar, TabbarItem } from "vant";
+
+// Vue.use(Tabbar).use(TabbarItem);
+export default {
+  data() {
+    return {
+      active: 0
+    };
   }
+};
 </script>
-  
+
 <style lang="stylus" rel="stylesheet/stylus">
+.footerNavBox 
+  width 375px
+  height 49px
+  background pink
   .footerNav
-    width 375px
-    height 49px
-    background pink 
-    .footerBox
-      width 100%
-      height 100%
-      display flex
-      justify-content space-between
+    display flex
+    justify-content space-around
+    align-items center
+    margin 0 auto 
 </style>
