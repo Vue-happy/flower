@@ -1,25 +1,18 @@
 <template>
-    <header class="headerbar">
-    <div class="headerbar-left"></div>
-      <div class="headerbar-center">
-          <p class="header-content">购物车</p>
-      </div>
-      <div class=""></div>
-    </header>
+ <div class="wrapper">
+  <div class="header">
+gdsg
+  </div>
+ </div>
 </template>
-<script>
 
-</script>
+<style lang='stylus'>
+  .wrapper
+     width 100%
+     height 100%
+     .header
+       width 375px
+       height 44px
+       color red
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style lang="stylus" scoped>
-  .headerbar {
-      display :flex
-      background-color  : yellowgreeen 
-      // width 100%
-      height 15px
-      line-height 15px
-      line-height 15px
-      
-  }
 </style>
