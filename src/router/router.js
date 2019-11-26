@@ -14,7 +14,7 @@ export default [
   },
   {
     path:'/sort',
-    component: Sort
+    component: Sort,
   },
   {
     path:'/cart',
@@ -31,6 +31,6 @@ export default [
 
   {
     path: '/',
-    redirect: '/home'
+    redirect: '/sort'
   }
 ]

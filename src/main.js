@@ -1,8 +1,14 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
+// import '../'
 
 Vue.config.productionTip = false
+import { Tab, Tabs, Search} from 'vant';
+// import { Search } from 'vant';
+
+Vue.use(Tab).use(Tabs);
+Vue.use(Search);
 
 import Home from '../src/pages/Home'
 import Sort from '../src/pages/Sort'
