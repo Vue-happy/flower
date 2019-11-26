@@ -20,12 +20,23 @@
           
       <!-- 订单页面 start-->
       <div class="panel">
-        <van-grid>
-          <van-grid-item icon="photo-o" text="文字" />
-          <van-grid-item icon="photo-o" text="文字" />
-          <van-grid-item icon="photo-o" text="文字" />
-          <van-grid-item icon="photo-o" text="文字" />
-        </van-grid>
+        <!-- title start-->
+        <div class="pannel-tilte">
+          <div>
+            <span>我的订单</span>
+          </div>  
+          <div>
+            <a href=""><span>我的订单></span></a>
+          </div>
+        </div>
+        <!-- title end-->
+        <!-- order start -->
+        <van-tabbar v-model="active" class="order">
+          <van-tabbar-item icon="home-o">代付款</van-tabbar-item>
+          <van-tabbar-item icon="search" dot>今日配送</van-tabbar-item>
+          <van-tabbar-item icon="friends-o" info="5">待评价</van-tabbar-item>
+        </van-tabbar>
+        <!-- order end -->
       </div>
         <!-- 订单页面end -->
     </div>
@@ -81,4 +92,19 @@ export default {
       width 359px
       height 117px
       background yellow
+      position relative
+      .pannel-tilte
+        box-sizing border-box
+        padding  0 10px
+        display flex
+        justify-content space-between
+        align-items center
+        width 359px
+        height 44px 
+      .order
+        width 359px
+        height 73px
+        // background red
+        position absolute
+
 </style>
