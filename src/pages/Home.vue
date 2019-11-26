@@ -1,8 +1,5 @@
 <template>
   <div id="firstpageContainer">
-
-    
-
     <div class="firstScroll">
       <div class="header">
         <div class="header-left">
@@ -252,6 +249,9 @@
       },
       addShop(shopItem){
         
+      },
+      scrollTo(e){
+        console.log(e)
       }
     }
   }
