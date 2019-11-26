@@ -3,6 +3,10 @@
     <router-view></router-view>
     <Footer/>
   </div>
+ 
+
+  <router-view></router-view>
+</div>
 </template>
 
 <script>
