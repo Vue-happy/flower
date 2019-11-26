@@ -1,6 +1,8 @@
 <template>
   <div id="firstpageContainer">
 
+    
+
     <div class="firstScroll">
       <div class="header">
         <div class="header-left">
@@ -152,20 +154,20 @@
         <div class="detailHeader">
           <span>送恋人/爱情鲜花</span>
         </div>
-        <div class="detailItem" v-for="(item,index) in 2" :key="index">
+        <div class="detailItem" v-for="(item,index) in 3" :key="index">
           <img src="https://img01.hua.com/uploadpic/newpic/9010966.jpg_220x240.jpg" alt="">
           <div class="detailItemRight">
-            <p class="flowerName">一往情深</p>
-            <p class="flowerDescribe">精品玫瑰礼盒:19枝红玫瑰,勿忘我0.1扎</p>
+            <p class="flowerName">huahua/p>
+            <p class="flowerDescribe">huahua</p>
             <hr>
             <p>经典爆款,年销售冠军!</p>
             <hr>
             <div class="detailItemBottom">
               <div class="shopPrice">
-                <p class="price">￥239</p>
-                <p>已销售7.5万件</p>
+                <p class="price">￥123</p>
+                <p>已销售321万件</p>
               </div>
-              <i class="iconfont icongouwuche"></i>
+              <i class="iconfont icongouwuche" @click="addShop(shopItem)"></i>
             </div>
           </div>
         </div>
@@ -196,18 +198,37 @@
         <br>中国鲜花网领先品牌，鲜花速递专家！
         <br>深圳市百易信息技术有限公司  粤ICP备09171662号
       </p>
+
+      <div class="firstIcon">
+        <i class="iconfont iconhuidaodingbu" v-show="gotop" @click="toTop"></i>
+      </div>
+
     </div>
 
+    <Footer/>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
+  import Vue from 'vue'
   import Swiper from 'swiper'
   import 'swiper/css/swiper.min.css'
   import BScroll from 'better-scroll'
 
+  import Footer from '../../components/Footer/Footer'
   export default {
-    mounted(){
+    data(){
+      return{
+        //定义一个回到顶部的状态值
+        gotop:false,
+        scrollY:0,
+      }
+    },
+    components:{
+      Footer
+    },
+    async mounted(){
+      //轮播
       new Swiper('.swiper-container',{
         loop:true,
         autoplay:true,
@@ -215,10 +236,27 @@
           el: '.swiper-pagination',
         },
       })
-      new BScroll('#firstpageContainer',{
-        scrollY:true,
-        click:true
-      })
+      this._initScroll()
+    },
+    methods:{
+      _initScroll(){
+        //竖向滚动
+        this.firstScroll = new BScroll('#firstpageContainer',{
+          scrollY:true,
+          click:true,
+          probeType: 2, // 实时
+        })
+        this.firstScroll.on('scroll', ({x, y}) => {
+          this.scrollY = Math.abs(y)
+          this.scrollY > 500 ? (this.gotop = true) : (this.gotop = false)
+        })
+      },
+      toTop(){
+        this.firstScroll.scrollTo(0,0,1000)
+      },
+      addShop(shopItem){
+        
+      }
     }
   }
 </script>
@@ -498,7 +536,6 @@
         width 100%
         height 58px
         padding 20px 0 14px
-        background-color pink
         box-sizing border-box
         .title1
           font-size 12px
@@ -512,7 +549,6 @@
         width 100%
         height 58px
         padding 0 0 20px
-        background-color pink
         box-sizing border-box
         .title2
           font-size 12px
@@ -529,5 +565,12 @@
       color #b4babf
       font-size 10px
       text-align center
-      box-sizing border-box    
+      box-sizing border-box 
+    .firstIcon
+      position sticky
+      right 10px
+      bottom 42%
+      i
+        font-size 24px
+        background-color #fff
 </style>
