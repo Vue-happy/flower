@@ -2,7 +2,6 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 import routes from './router'
-
 // 使用路由
 Vue.use(VueRouter)
 

@@ -1,5 +1,7 @@
 <template>
+
 <div class="router">
+  
   <router-link to="/home">首页</router-link>
   <router-link to="/sort">分类</router-link>
   <router-link to="/cart">购物车</router-link>
@@ -8,6 +10,8 @@
 
   <router-view></router-view>
 </div>
+
+
 </template>
 
 <script>
@@ -22,8 +26,8 @@ export default {
 <style lang="stylus" scoped>
 
  .router
-    position fixed
+    // position fixed
     bottom 0
     left 0
-    font-size 20px
+    font-size 10px
 </style>
