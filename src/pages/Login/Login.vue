@@ -66,6 +66,5 @@ export default {
       .hualogo
         width  190px
         height 25px
-      .loginInput
         
 </style>
