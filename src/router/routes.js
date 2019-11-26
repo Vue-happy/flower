@@ -1,32 +1,41 @@
-import Classify from '../pages/Classify/Classify'
-import Msite from '../pages/Msite/Msite'
-import Shop from '../pages/Shop/Shop'
-import Profile from '../pages/Profile/Profile'
-import Login from '../pages/Login/Login'
+const Home = () => import('../pages/Home.vue')
+const Sort = () => import('../pages/Sort')
+const Cart = () => import('../pages/Cart')
+const Profile = () => import('../pages/Profile')
+const Login = () => import('../pages/Login')
+const Striky = () => import('../pages/striky.vue')
+
+
+
 
 export default [
   {
-    path:'/msite',
-    component:Msite
+    path:'/home',
+    component: Home
+  },   
+  {
+    path:'/striky',
+    component: Striky
+  }, 
+  {
+    path:'/sort',
+    component: Sort
   },
   {
-    path:'/classify',
-    component:Classify
+    path:'/cart',
+    component: Cart
+  },  
+  {
+    path:'/Profile',
+    component: Profile
   },
   {
-    path:'/shop',
-    component:Shop
+    path:'/login',
+    component: Login
   },
-  {
-     path: '/profile',
-    component: Profile,
-  },
-  {
-    path: '/login',
-    component: Login,
-  },
+
   {
     path: '/',
-    redirect:'msite'
-  },
+    redirect: '/home'
+  }
 ]

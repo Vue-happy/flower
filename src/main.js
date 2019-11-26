@@ -1,16 +1,12 @@
 import Vue from 'vue'
-import Vant from 'vant'
  import App from './App.vue'
 import router from './router'
-import VBack from 'v-back'
 
 
 import  'lib-flexible/flexible'
-import { Field,Icon  } from 'vant';
 Vue.config.productionTip = false
 
 
-Vue.use(Field);
 
 import Home from '../src/pages/Home'
 import Sort from '../src/pages/Sort'
@@ -20,7 +16,7 @@ import Login from '../src/pages/Login'
 import Footer from '../src/components/Footer/Footer'
 
 // 注册vant全局组件
-import { Icon } from 'vant';
+import { Field,Icon  } from 'vant';
 import { Tabbar, TabbarItem } from "vant"
 import { NavBar } from 'vant';
 import { Button } from 'vant';
@@ -29,7 +25,6 @@ import { Grid, GridItem } from 'vant';
 import { Divider } from 'vant';
 import { Overlay } from 'vant';
 
-Vue.use(VBack)
 Vue.use(Icon);
 Vue.use(Tabbar).use(TabbarItem);
 Vue.use(NavBar);
