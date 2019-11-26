@@ -1,6 +1,6 @@
 import FirstPage from '../pages/FirstPage/FirstPage'
 
-export default[
+export default [
   //首页的路由
   {
     path:'/firstpage',
