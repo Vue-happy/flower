@@ -1,4 +1,5 @@
 const Home = () => import('../pages/Home.vue')
+const Hua = () => import('../pages/Hua')
 const Sort = () => import('../pages/Sort')
 const Cart = () => import('../pages/Cart')
 const Profile = () => import('../pages/Profile')
@@ -7,12 +8,18 @@ const Test = () => import('../pages/test')
 
 
 
-
 export default [
   {
     path:'/home',
     component: Home
-  },   
+  },  
+  {
+    path:'/hua',
+    component: Hua,
+    meta: {
+      isShowFooterGuide:false
+    }
+  }, 
   {
     path:'/test',
     component: Test
@@ -21,6 +28,10 @@ export default [
     path:'/sort',
     component: Sort
   },
+  // {
+  //   path:'/Classify',
+  //   component: Classify,
+  // },
   {
     path:'/cart',
     component: Cart
@@ -36,6 +47,6 @@ export default [
 
   {
     path: '/',
-    redirect: '/home'
+    redirect: '/hua'
   }
 ]
