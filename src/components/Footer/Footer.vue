@@ -1,5 +1,5 @@
 <template>
-  <div id="footerGuideContainer">
+  <div id="footerGuideContainer" >
     <div
       class="guideItem"
       :class="{ active: $route.path === '/home' }"

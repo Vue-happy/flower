@@ -1,10 +1,11 @@
-const Home = () => import('../pages/Home.vue')
+
 const Hua = () => import('../pages/Hua')
+const Home = () => import('../pages/Home')
 const Sort = () => import('../pages/Sort')
 const Cart = () => import('../pages/Cart')
 const Profile = () => import('../pages/Profile')
 const Login = () => import('../pages/Login')
-const Test = () => import('../pages/test')
+const Detail = () => import('../components/Detail/Detail')
 
 
 
@@ -21,12 +22,18 @@ export default [
     }
   }, 
   {
-    path:'/test',
-    component: Test
+    path:'/detail',
+    component: Detail,
+    meta: {
+      isShowFooterGuide: false
+    }
   }, 
   {
     path:'/sort',
-    component: Sort
+    component: Sort,
+    meta: {
+      isShowFooterGuide: true
+    }
   },
   // {
   //   path:'/Classify',
@@ -34,15 +41,24 @@ export default [
   // },
   {
     path:'/cart',
-    component: Cart
+    component: Cart,
+    meta: {
+      isShowFooterGuide: true
+    }
   },  
   {
     path:'/Profile',
-    component: Profile
+    component: Profile,
+    meta: {
+      isShowFooterGuide: true
+    }
   },
   {
     path:'/login',
-    component: Login
+    component: Login,
+    meta: {
+      isShowFooterGuide: false
+    }
   },
 
   {

@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
+import store from './store'
 
 
 
@@ -15,6 +16,7 @@ import Cart from '../src/pages/Cart'
 import Profile from '../src/pages/Profile'
 import Login from '../src/pages/Login'
 import Footer from '../src/components/Footer/Footer'
+import Detail from '../src/components/Detail/Detail'
 
 // 注册vant全局组件
 import { Field,
@@ -31,6 +33,10 @@ import { Toast } from 'vant';
 import { Grid, GridItem } from 'vant';
 import { Divider } from 'vant';
 import { Overlay } from 'vant';
+import { DropdownMenu, DropdownItem } from 'vant';
+import { Row, Col } from 'vant';
+
+
 
 
 Vue.use(Swipe).use(SwipeItem);
@@ -42,6 +48,9 @@ Vue.use(Button);
 Vue.use(Toast);
 Vue.use(Grid).use(GridItem);
 Vue.use(Overlay);
+Vue.use(Divider);
+Vue.use(DropdownMenu).use(DropdownItem);
+Vue.use(Row).use(Col);
 
 Vue
   .use(GoodsAction)
@@ -55,10 +64,10 @@ Vue.component('Cart',Cart)
 Vue.component('Profile',Profile)
 Vue.component('Login',Login)
 Vue.component('Footer',Footer)
-Vue.use(Divider);
+Vue.component('Detail',Detail)
 
 new Vue({
   render: h => h(App),
   router, //注册路由
-  // store
+  store
 }).$mount('#app')

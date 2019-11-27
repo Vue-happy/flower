@@ -42,24 +42,25 @@ module.exports = {
     }
   },
 
-  // devServer: {
-  //   proxy: {
-  //     '/api': {
-  //       target: 'http://localhost:4000',
-  //       changeOrigin: true,
-  //       pathRewrite: {
-  //         '^/api': ''
-  //       }
-  //     }
-  //   }
-  // },
+ //配置代理服务器
+devServer: {
+  proxy: {
+    '/api': {
+      target: 'http://localhost:3000',
+      changeOrigin: true,
+      pathRewrite: { //路径重写
+        '^/api': '', // rewrite path
+      }
+    }
+  }
 
-  // pluginOptions: {
-  //   i18n: {
-  //     locale: 'en',
-  //     fallbackLocale: 'en',
-  //     localeDir: 'locales',
-  //     enableInSFC: true
-  //   }
-  // }
+//   // pluginOptions: {
+//   //   i18n: {
+//   //     locale: 'en',
+//   //     fallbackLocale: 'en',
+//   //     localeDir: 'locales',
+//   //     enableInSFC: true
+//   //   }
+//   // }
+}
 }
