@@ -31,7 +31,7 @@ module.exports = {
       }
     },
   },
-
+  
   css: { // 添加postcss配置
     loaderOptions: {
       postcss: {
@@ -42,25 +42,24 @@ module.exports = {
     }
   },
 
- //配置代理服务器
-devServer: {
-  proxy: {
-    '/api': {
-      target: 'http://localhost:3000',
-      changeOrigin: true,
-      pathRewrite: { //路径重写
-        '^/api': '', // rewrite path
+  devServer: {
+    proxy: {
+      '/api': {
+        target: 'http://localhost:3000',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/api': ''
+        }
       }
     }
-  }
+  },
 
-//   // pluginOptions: {
-//   //   i18n: {
-//   //     locale: 'en',
-//   //     fallbackLocale: 'en',
-//   //     localeDir: 'locales',
-//   //     enableInSFC: true
-//   //   }
-//   // }
-}
+  pluginOptions: {
+    i18n: {
+      locale: 'y',
+      fallbackLocale: 'en',
+      localeDir: 'locales',
+      enableInSFC: false
+    }
+  }
 }

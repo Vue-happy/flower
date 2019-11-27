@@ -3,11 +3,22 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 
+import 'lib-flexible/flexible'
 
 
-import  'lib-flexible/flexible'
+
 Vue.config.productionTip = false
 
+// import Vant from 'vant';
+// import 'vant/lib/index.css';
+// Vue.use(Vant)
+
+
+import { Tab, Tabs, Search,} from 'vant';
+
+
+Vue.use(Tab).use(Tabs);
+Vue.use(Search);
 
 
 import Home from '../src/pages/Home'

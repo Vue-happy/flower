@@ -11,8 +11,14 @@ export default {
   name: 'app',
   components:{Footer}
 }
-</script lang="stylus" rel="stylesheet/stylus">
+</script>
 
-<style>
-
+<style lang="stylus" rel="stylesheet/stylus">
+.routerContainer
+  position relative
+ .router
+    // position fixed
+    bottom 0
+    left 0
+    font-size 20px
 </style>
