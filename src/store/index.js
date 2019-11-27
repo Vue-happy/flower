@@ -1,16 +1,17 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-
-import state from './state'
-import mutations from './mutations'
-import action from './actions'
+import actions from './actions'
 import getters from './getters'
+import mutations from './mutations'
+import state from './state'
 
+//声明使用插件
 Vue.use(Vuex)
 
+//创建并向外暴露store对象
 export default new Vuex.Store({
-  state,
+  actions,
+  getters,
   mutations,
-  action,
-  getters
-})
+  state
+}) 

@@ -1,6 +1,7 @@
 <template>
   <div class="app">
     <router-view></router-view>
+    
   </div>
 </template>
 
@@ -11,4 +12,5 @@
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
+  
 </style>
