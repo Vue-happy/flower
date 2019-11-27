@@ -12,7 +12,10 @@ const Detail = () => import('../components/Detail/Detail')
 export default [
   {
     path:'/home',
-    component: Home
+    component: Home,
+    meta: {
+      isShowFooterGuide:true
+    }
   },  
   {
     path:'/hua',
@@ -63,6 +66,6 @@ export default [
 
   {
     path: '/',
-    redirect: '/hua'
+    redirect: '/home'
   }
 ]
