@@ -3,7 +3,7 @@ const Sort = () => import('../pages/Sort')
 const Cart = () => import('../pages/Cart')
 const Profile = () => import('../pages/Profile')
 const Login = () => import('../pages/Login')
-const Striky = () => import('../pages/striky.vue')
+const Test = () => import('../pages/test')
 
 
 
@@ -14,8 +14,8 @@ export default [
     component: Home
   },   
   {
-    path:'/striky',
-    component: Striky
+    path:'/test',
+    component: Test
   }, 
   {
     path:'/sort',
