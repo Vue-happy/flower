@@ -1,4 +1,4 @@
-import { SAVE_DETAILLIST } from '../mutations-type'
+import { SAVE_DETAILLIST , SAVE_SORT_NUM,SAVE_SORT_PRICE } from '../mutations-type'
 import {reqDetail} from '../../api'
 
 const state = {
@@ -7,8 +7,27 @@ const state = {
 
 const mutations = {
   [SAVE_DETAILLIST](state,detailList){
+    // console.log(state,detailList)
     state.detailList = detailList
-    console.log(detailList)
+    // console.log(detailList)
+  },
+  [SAVE_SORT_NUM](state){
+    console.log(state)
+    let result = state.detailList.sort( (a,b) => {
+      b.ItemCode *= 1
+      a.ItemCode *= 1
+      return  b.ItemCode - a.ItemCode
+      
+    })
+    state.detailList = result
+    // console.log(detailList,result)
+  },
+  [SAVE_SORT_PRICE](state){
+    console.log(state)
+    let result = state.detailList.sort( (a,b) => {
+      return b.Price - a.Price
+    })
+    state.detailList = result
   }
 }
 

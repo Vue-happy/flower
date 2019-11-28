@@ -16,8 +16,8 @@
     <nav class="filter">
       <ul class="filterbox">
         <li class="filteritem">综合</li>
-        <li class="filteritem" @click="toNum">销量</li>
-        <li class="filteritem" @click="toPrice">价格</li>
+        <li class="filteritem" @click="sort_num()">销量</li>
+        <li class="filteritem" @click="sort_price()">价格</li>
         <li class="filteritem">新品</li>
       </ul>
     </nav>
@@ -37,7 +37,10 @@
             <img :src="`https://img01.hua.com/uploadpic/newpic/${item.ItemCode}.jpg_220x240.jpg`" alt="">
             <div class="text">
               <p>{{item.Cpmc}}·{{item.Instro}}</p>
-              <span>￥{{item.Price}}</span>
+              <div class="textitem">
+                <p>￥{{item.Price}}</p>
+                <p>销量{{item.ItemCode}}</p>
+              </div>
             </div>
           </a>
         </li>        
@@ -57,6 +60,7 @@
   
 <script type="text/ecmascript-6">
   import {mapState} from 'vuex'
+import { SAVE_SORT_NUM,SAVE_SORT_PRICE } from '../../store/mutations-type'
 
   export default {
     data() {
@@ -87,18 +91,26 @@
         //   document.body.scrollTop,
         //   window.pageYOffset
         // );
-    },
-    toTop(){
-      const timer= setInterval(()=> {
-        let scrollTop =document.documentElement.scrollTop 
-        var speed = 40
-        window.pageYOffset = document.documentElement.scrollTop = document.body.scrollTop =( scrollTop - speed) - 1/50 *( scrollTop - speed)
-        console.log(scrollTop)
-        if (scrollTop <= 0 ) {
-          clearInterval(timer)
-        }
-      },10)
-    }
+      },
+      toTop(){
+        const timer= setInterval(()=> {
+          let scrollTop =document.documentElement.scrollTop 
+          var speed = 40
+          window.pageYOffset = document.documentElement.scrollTop = document.body.scrollTop =( scrollTop - speed) - 1/50 *( scrollTop - speed)
+          console.log(scrollTop)
+          if (scrollTop <= 0 ) {
+            clearInterval(timer)
+          }
+        },10)
+      },
+      sort_num(){
+        console.log(111111)
+        this.$store.commit(SAVE_SORT_NUM)
+      } ,
+      sort_price(){
+        console.log(111111)
+        this.$store.commit(SAVE_SORT_PRICE)
+      }
     },
 
     mounted() {
@@ -207,11 +219,17 @@
                 display block
                 overflow hidden 
                 // white-space nowrap
-                
-              span 
-                position absolute
-                bottom -14px
+              .textitem  
+                width 100%
+                // position absolute
+                margin 0 auto
+                // bottom -14px
                 color #f60
+                display flex
+                justify-content space-around
+                p
+                  &:last-child
+                    color #000
     .footer
       height 64px
       background #fff
