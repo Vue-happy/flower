@@ -29,7 +29,7 @@
             <span>我的订单</span>
           </div>
           <div>
-            <a href=""><span>我的订单></span></a>
+            <a href="javascript;:"><span>我的订单></span></a>
           </div>
 
         </div>
@@ -38,7 +38,7 @@
         <!-- order start -->
         <div class="order">
           <div class="order-item">
-            <a href="">
+            <a href="javascript;:">
               <img
                 src="https://img02.hua.com/m/member/center/myinfo_pendingpay.png"
                 alt=""
@@ -47,7 +47,7 @@
             </a>
           </div>
           <div class="order-item">
-            <a href="">
+            <a href="javascript;:">
               <img
                 src="https://img02.hua.com/m/member/center/myinfo_distribution.png"
                 alt=""
@@ -56,7 +56,7 @@
             </a>
           </div>
           <div class="order-item">
-            <a href="">
+            <a href="javascript;:">
               <img
                 src="https://img02.hua.com/m/member/center/myinfo_evaluation.png"
                 alt=""
@@ -73,49 +73,49 @@
       <!-- 信息start -->
       <ul class="pannel-bottom">
         <li class="pannel-bottom-item">
-          <a href="">
+          <a href="javascript;:">
             <p class="icon iconfont iconyouhuiquan"></p>
             <p class="txt">优惠券</p>
           </a>
         </li>
         <li class="pannel-bottom-item">
-          <a href="">
+          <a href="javascript;:">
             <p class="icon iconfont iconcardvip"></p>
             <p class="txt">权益卡</p>
           </a>
         </li>
         <li class="pannel-bottom-item">
-          <a href="">
+          <a href="javascript;:">
             <p class="icon iconfont iconyue"></p>
             <p class="txt">余额</p>
           </a>
         </li>
         <li class="pannel-bottom-item">
-          <a href="">
+          <a href="javascript;:">
             <p class="icon iconfont iconzuanshi"></p>
             <p class="txt">会员积分</p>
           </a>
         </li>
         <li class="pannel-bottom-item">
-          <a href="">
+          <a href="javascript;:">
             <p class="icon iconfont icondizhi"></p>
             <p class="txt">收货地址</p>
           </a>
         </li>
         <li class="pannel-bottom-item">
-          <a href="">
+          <a href="javascript;:">
             <p class="icon iconfont iconnaozhong-copy"></p>
             <p class="txt">生日纪念提醒</p>
           </a>
         </li>
         <li class="pannel-bottom-item">
-          <a href="">
+          <a href="javascript;:">
             <p class="icon iconfont iconshoucang"></p>
             <p class="txt">我的收藏</p>
           </a>
         </li>
         <li class="pannel-bottom-item">
-          <a href="">
+          <a href="javascript;:">
             <p class="icon iconfont iconjilu"></p>
             <p class="txt">浏览记录</p>
           </a>
@@ -133,12 +133,6 @@
           </div>
           <div class="wx-gj-right">
             <van-button color="#FF734C" block class="button">加我微信</van-button>
-            <!-- <van-overlay :show="show" @click="show = false">
-              <div class="wrapper" @click.stop>
-
-                <div class="block" />
-              </div>
-            </van-overlay> -->
           </div>
         </div>
         <div class="dlog">
@@ -150,25 +144,25 @@
       <!-- 微信管家end -->
       <ul class="pannel-bottom2">
         <li class="pannel-bottom-item">
-          <a href="">
+          <a href="javascript;:">
             <p class="icon iconfont iconservice"></p>
             <p class="txt">联系客服</p>
           </a>
         </li>
         <li class="pannel-bottom-item">
-          <a href="">
+          <a href="javascript;:">
             <p class="icon iconfont iconbangzhuzhongxin"></p>
             <p class="txt">帮助中心</p>
           </a>
         </li>
         <li class="pannel-bottom-item">
-          <a href="">
+          <a href="javascript;:">
             <p class="icon iconfont iconxinxi"></p>
             <p class="txt">关于花礼</p>
           </a>
         </li>
         <li class="pannel-bottom-item">
-          <a href="">
+          <a href="javascript;:">
             <p class="icon iconfont iconshezhi"></p>
             <p class="txt">设置</p>
           </a>
@@ -308,13 +302,14 @@ export default {
           display flex
           justify-content space-between
           p
-            line-height 0px
+            line-height 32px
             margin-left 10px
           img
             width 32px
             height 32px
             border-radius 50%
             // margin-left -30px
+            margin-left 30px
         .wx-gj-right
           .button
             margin-right 0px
