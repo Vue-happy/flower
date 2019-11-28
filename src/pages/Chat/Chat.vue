@@ -1,15 +1,6 @@
 <template>
   <div class="block_main">
-    <div class="header">
-      <div class="header-left">
-        <i class="iconfont iconsousuo"></i>
-      </div>
-      <img src="https://m.hua.com/content/vue/login/static/img/m_hualogo.png" alt="">
-      <div class="header-right">
-        <i class="iconfont iconerji" @click="show = true"></i>
-      </div>
-    </div>
-    <van-overlay :show="show" class="cj">
+    <van-overlay :show="show" >
       <div class="wrapper">
         <div class="block">
           <div class="header">
@@ -65,125 +56,101 @@
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
-  .header
-    width 100%
-    height 48px
-    background #435448
+#block_main
+  width 100%
+  position fixed
+  z-index 9
+
+  .wrapper
     display flex
-    justify-content space-between
-    .header-left
-      width 48px
-      height 48px
-      line-height 48px
-      .iconfont
-        font-size 24px
-        color #ffffff
-        margin-left 10px
-    img
-      width 150px
-      height 20px
-      margin-top 14px
-      margin-right 10px
-    .header-right  
-      width 48px
-      height 48px
-      line-height 48px
-      .iconfont
-        font-size 24px
-        color #ffffff
-        margin-left 12px
-  .cj
-    position relative
-    z-index 99
-    .wrapper
-      display flex
-      align-items center
-      justify-content center
-      height 100%
-      position relative
-      z-index 9999999999
-
-      .block 
+    align-items center
+    justify-content center
+    height 100%
+    position fixed
+    left 0
+    top 0
+    background-color pink
+    .block 
+      width 100%
+      height calc(100vh - 100px)
+      background-color #fff
+      .header
         width 100%
-        height calc(100vh - 100px)
-        background-color #fff
-        .header
+        height 60px
+        background-color #ff6600
+        .header-title
           width 100%
-          height 60px
-          background-color #ff6600
-          .header-title
-            width 100%
-            height 100%
-            padding 10px
-            box-sizing border-box
-            display flex
-            span
-              width 268px
-              height 40px
-              line-height 40px
-              font-size 14px
-            .header-right
-              width 88px
-              height 40px
-              line-height 40px
-              text-align center
-              box-sizing border-box 
-              i
-                font-size 20px
-        .chatContainer
-          width 100%
-          height 510px
-          .container
-            width 100%
-            height 497px
-            padding 14px
-            box-sizing border-box
-            .chatItem
-              width 347px
-              height 72px
-              margin 0px 0px 20px
-              padding 0px 10px 0px 0px
-              display flex
-              img
-                width 36px
-                height 36px
-                margin 16px 10px 0 0
-              .title
-                width 180px
-                height 54px
-                margin-top 10px
-                padding 14px 8px
-                box-sizing border-box
-                border 1px solid #eeeeee
-                border-radius 5px
-
-      .footer
-        width 375px
-        height 50px
-        position absolute
-        left 0
-        bottom 0
-        display flex
-        justify-content space-between
-        background-color #ffffff
-        .footer-left
-          width 78px
-          height 40px
-          line-height 34px
-          text-align center
+          height 100%
           padding 10px
           box-sizing border-box
-          i
-            font-size 20px
-            padding-right 4px
-        input
-          width 230px
-          height 36px
-          margin-top 8px 
-          font-size 14px
-          border 1px solid #eee
-          border-radius 6px
-        span
-          font-size 14px
-          padding 18px 10px 0 0
+          display flex
+          span
+            width 268px
+            height 40px
+            line-height 40px
+            font-size 14px
+          .header-right
+            width 88px
+            height 40px
+            line-height 40px
+            text-align center
+            box-sizing border-box 
+            i
+              font-size 20px
+      .chatContainer
+        width 100%
+        height 510px
+        .container
+          width 100%
+          height 497px
+          padding 14px
+          box-sizing border-box
+          .chatItem
+            width 347px
+            height 72px
+            margin 0px 0px 20px
+            padding 0px 10px 0px 0px
+            display flex
+            img
+              width 36px
+              height 36px
+              margin 16px 10px 0 0
+            .title
+              width 180px
+              height 54px
+              margin-top 10px
+              padding 14px 8px
+              box-sizing border-box
+              border 1px solid #eeeeee
+              border-radius 5px
+
+    .footer
+      width 375px
+      height 50px
+      position absolute
+      left 0
+      bottom 0
+      display flex
+      justify-content space-between
+      background-color #ffffff
+      .footer-left
+        width 78px
+        height 40px
+        line-height 34px
+        text-align center
+        padding 10px
+        box-sizing border-box
+        i
+          font-size 20px
+          padding-right 4px
+      input
+        width 230px
+        height 36px
+        margin-top 8px 
+        font-size 14px
+        border 1px solid #eee
+        border-radius 6px
+      span
+        font-size 14px
+        padding 18px 10px 0 0
 </style>
