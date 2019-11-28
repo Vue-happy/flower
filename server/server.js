@@ -9,7 +9,7 @@ app.get('/detail',(req,res) => {
   console.log(1111)
   res.send(detailList)
 })
-app.get('/home_flower',(req,res) => {
+app.get('/home',(req,res) => {
   res.send(flower)
 })
 

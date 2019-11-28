@@ -1,4 +1,4 @@
-import {getflowers} from '../api/index'
+import {getflowers} from '../api'
 import {SAVE_FLOWERS} from './mutations-type'
 
 //发送请求,获取数据
