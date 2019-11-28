@@ -11,7 +11,7 @@
     </div>
     <Main/>
     <Footer/>
-    <Chat > </Chat>
+    <Chat :show="show"> </Chat>
   </div>
 </template>
 

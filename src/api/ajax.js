@@ -1,7 +1,7 @@
 import axios from "axios";
 import qs from "qs";
 import router from '../router'
-import { Toast } from "mint-ui";
+// import { Toast } from "mint-ui";
 
 const instance = axios.create({
   baseURL:'/api'
@@ -30,17 +30,17 @@ instance.interceptors.response.use(
   error => {
     console.log(error)
     if(!error.response){
-      Toast.alert (error.message)
+      console.log(error.message)
       router.currentRoute.path !== '/login' && router.replace('/login')
     }else if(error.response.status === 401){
-      Toast.alert ('登录过期，请重新登录')
+      console.log ('登录过期，请重新登录')
       router.currentRoute.path !== '/login' && router.replace('/login')
     }else if(error.response.status === 404){
-      Toast.alert ('请求资源未找到')
+      console.log ('请求资源未找到')
     }else{
-      Toast.alert ('请求失败1')
+      console.log ('请求失败1')
     }
-    Toast.alert ('请求失败2')
+    console.log ('请求失败2')
     return new Promise(()=>{})
   }
 )
