@@ -212,26 +212,29 @@ export default {
     top 44px
     width 100%
     // height 500px
-    background-image: url('https://img02.hua.com/m/member/center/backgroundv3.png')
+    
     .login-box
+      background-image: url('https://img02.hua.com/m/member/center/backgroundv3.png')
       width 100%
       height 112px
+      // 
       // background red
       display block
       text-align center
       color #fff
       p
+        line-height 70px
         font-size 14px
       .btn-login
         width 126px
         height 36px
         line-height 36px
         margin 0 auto
+        margin-top -20px
     .panel-top
       margin 0 auto
       width 360px
       height 117px
-
       position relative
       .pannel-tilte
         box-sizing border-box
@@ -269,20 +272,27 @@ export default {
       position relative
 
       .pannel-bottom-item
+        // background pink
         text-align center
         width 90px
         height 90px
         float left
-        .icon
-          font-size 20px
-        .txt
-          font-size 15px
+        a
+          display flex
+          flex-direction column
+          justify-content space-around
+          margin-top 30px
+          line-height 20px  
+          .icon
+            font-size 20px
+          .txt
+            font-size 15px
       .border
         position absolute
-        top 60%
+        top 50%
         width 360px
         height 1px
-        background pink
+        background #ddd
     .pannel-wx-gj
       width 360px
       height 111px

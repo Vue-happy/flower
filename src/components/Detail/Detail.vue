@@ -1,8 +1,8 @@
 <template>
   <div id="detail">
     <div class="headerbar">
-      <div class="listitem">
-        <a href=""><span class="iconfont iconfanhui"></span></a>
+      <div class="listitem tb ">
+        <a  href=""><span class="iconfont iconfanhui"></span></a>
       </div>
       <div class="listitem">
         <span>爱情鲜花</span>
@@ -96,6 +96,8 @@
           width 196px
       .tb
         display flex
+        a 
+          padding 10px
         .icon
           text-align center
           display block
