@@ -21,11 +21,11 @@
     </nav>
     <nav class="purposebox">
       <ul class="purpose">
-        <li class="purposeitem">送女友</li>
-        <li class="purposeitem">送男性</li>
-        <li class="purposeitem">送朋友</li>
-        <li class="purposeitem">送长辈</li>
-        <li class="purposeitem">筛选</li>
+        <li class="purposeitem"><a href="">送女友</a></li>
+        <li class="purposeitem"><a href="">送男性</a></li>
+        <li class="purposeitem"><a href="">送朋友</a></li>
+        <li class="purposeitem"><a href="">送长辈</a></li>
+        <li class="purposeitem"><a href="">筛选</a></li>
       </ul>
     </nav>
     <section class="product">
@@ -80,7 +80,7 @@
   #detail
     width 375px
     .headerbar
-      background pink 
+      // background pink 
       width 100%
       height 44px
       display flex
@@ -92,9 +92,11 @@
         &:nth-child(2)
           width 196px
     .filter
+      // border-bottom 1px solid #fff
       .filterbox
+        border-bottom 1px solid #888
         // background blue
-        height 45px
+        height 44px
         display flex
         justify-content space-around
         .filteritem
@@ -102,15 +104,21 @@
           text-align center
           line-height 45px
     .purposebox
-      background yellow 
+      // background yellow 
       height 44px
       .purpose
         display flex
         justify-content space-around
         .purposeitem
+          box-sizing boeder-box 
+          // padding 4px
           width 20vw
           line-height 44px
           text-align center
+          a
+            padding 4px 8px
+            background #f7f9fa 
+            font-size 12px
     .product
       // &::after
       //   content ''
@@ -119,7 +127,7 @@
       // height 1000px
       background #ddd
       .productlist
-        background greenyellow 
+        // background greenyellow 
         display flex
         flex-wrap wrap
         .productlistitem
