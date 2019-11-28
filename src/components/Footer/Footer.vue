@@ -6,7 +6,7 @@
       @click="goPath('/home')"
     >
       <span>
-        <i class="iconfont iconhome"></i>
+        <i class="iconfont icon-home"></i>
       </span>
       <span>
         首页

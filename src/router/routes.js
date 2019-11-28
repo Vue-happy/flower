@@ -4,15 +4,21 @@ const Home = () => import('../pages/Home')
 const Sort = () => import('../pages/Sort')
 const Cart = () => import('../pages/Cart')
 const Profile = () => import('../pages/Profile')
-const Login = () => import('../pages/Login')
-const Detail = () => import('../components/Detail/Detail')
-
-
+const Login = () => import('../pages/Login/Login')
+const Detail = () => import('../pages/Detail')
+const Goods = () => import('../pages/Goods')
+const Order = () => import('../pages/Order')
 
 export default [
   {
     path:'/home',
     component: Home,
+    // children:[
+    //   {
+    //   path:'/home/goods',
+    //   components:'Goods' , 
+    //   },
+    // ],
     meta: {
       isShowFooterGuide:true
     }
@@ -38,6 +44,10 @@ export default [
       isShowFooterGuide: true
     }
   },
+  {
+    path:'/goods',
+    component: Goods,
+  },
   // {
   //   path:'/Classify',
   //   component: Classify,
@@ -54,6 +64,13 @@ export default [
     component: Profile,
     meta: {
       isShowFooterGuide: true
+    }
+  },
+  {
+    path:'/Order',
+    component: Order,
+    meta: {
+      isShowFooterGuide: false
     }
   },
   {

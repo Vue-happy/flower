@@ -72,15 +72,21 @@
    </div>
    <div class="end-z">去结算</div>
   </Footer>
+
+  <van-notice-bar mode="closeable" class="nav">
+  您的余额不足，请及时充值,优惠期间凡是满500减100，送豪华大礼包
+  </van-notice-bar>
  </div>
 
 </template>
 
 <style lang='stylus'>
   .Wrapper
+    position relative
     width 100%
     margin 0 auto
     padding 0
+    overflow hidden
     .Header
       width 100%
       height 44px
@@ -254,6 +260,13 @@
         text-align center
         background  #FF734C
         color #fff 
-        font-size 16px                  
+        font-size 16px   
+    .nav
+      width 100%
+      height 50px
+      position fixed
+      left 0
+      bottom 2px   
+      z-index 99          
 </style>
 

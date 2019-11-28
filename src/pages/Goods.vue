@@ -1,157 +1,162 @@
 <template>
-  <div class="Footer" @click="goPath('/Detail')">
-    <div class="Footer-litter">
-       <span>综合</span>
-       <span>销量</span>
-       <span>价格</span>
-       <span>新品</span>
-    </div>
-    <div class="Footer-list">
-      <div class="Footer-item">
-        <a href></a>
-        <div class="Footer-item-img">
-          <img src="../common/images/sort/hua.jpg" alt />
-        </div>
-        <div class="Footer-item-detail">
-          <span class="Footer-item-name">99枝玫瑰赠德芙心语巧克力</span>
-          <div class="Footer-item-price">￥629</div>
-        </div>
+  <div id="detail">
+    <div class="headerbar">
+      <div class="listitem">
+        <a href=""><span><</span></a>
       </div>
-      <div class="Footer-item">
-        <a href></a>
-        <div class="Footer-item-img">
-          <img src="../common/images/sort/hua.jpg"  alt />
-        </div>
-        <div class="Footer-item-detail">
-          <span class="Footer-item-name">99枝玫瑰赠德芙心语巧克力</span>
-          <div class="Footer-item-price">￥288</div>
-        </div>
+      <div class="listitem">
+        <span>爱情鲜花</span>
       </div>
-      <div class="Footer-item">
-        <a href></a>
-        <div class="Footer-item-img">
-          <img src="../common/images/sort/hua.jpg"  alt />
-        </div>
-        <div class="Footer-item-detail">
-          <span class="Footer-item-name">99枝玫瑰赠德芙心语巧克力</span>
-          <div class="Footer-item-price">￥163</div>
-        </div>
-      </div>
-      <div class="Footer-item">
-        <a href></a>
-        <div class="Footer-item-img">
-          <img src="../common/images/sort/hua.jpg"  alt />
-        </div>
-        <div class="Footer-item-detail">
-          <span class="Footer-item-name">99枝玫瑰赠德芙心语巧克力</span>
-          <div class="Footer-item-price">￥456</div>
-        </div>
-      </div>
-      <div class="Footer-item">
-        <a href></a>
-        <div class="Footer-item-img">
-          <img src="../common/images/sort/hua.jpg"  alt />
-        </div>
-        <div class="Footer-item-detail">
-          <span class="Footer-item-name">99枝玫瑰赠德芙心语巧克力</span>
-          <div class="Footer-item-price">￥790</div>
-        </div>
-      </div>
-      <div class="Footer-item">
-        <a href></a>
-        <div class="Footer-item-img">
-          <img src="../common/images/sort/hua.jpg"  alt />
-        </div>
-        <div class="Footer-item-detail">
-          <span class="Footer-item-name">99枝玫瑰赠德芙心语巧克力</span>
-          <div class="Footer-item-price">￥999</div>
-        </div>
-      
-      
-      </div>
-      <div class="discibeContainer">
-        <p>已经到底了...</p>
-        <p>送女友鲜花专区</p>
-        <p>Copyright © 2005~2019 花礼网(中国鲜花礼品网) 版权所有</p>
-
+      <div class="listitem">
+        <span class="iconfont iconcaidan" style="background :red"></span>
       </div>
     </div>
+    <nav class="filter">
+      <ul class="filterbox">
+        <li class="filteritem">综合</li>
+        <li class="filteritem">销量</li>
+        <li class="filteritem">价格</li>
+        <li class="filteritem">新品</li>
+      </ul>
+    </nav>
+    <nav class="purposebox">
+      <ul class="purpose">
+        <li class="purposeitem">送女友</li>
+        <li class="purposeitem">送男性</li>
+        <li class="purposeitem">送朋友</li>
+        <li class="purposeitem">送长辈</li>
+        <li class="purposeitem">筛选</li>
+      </ul>
+    </nav>
+    <section class="product">
+      <ul class="productlist" @click="goPath('/detail')">
+        <li class="productlistitem" v-for="(item, index) in detailList" :key="index">
+          <a>
+            <img :src="`https://img01.hua.com/uploadpic/newpic/${item.ItemCode}.jpg_220x240.jpg`" alt="">
+            <div class="text">
+              <p>{{item.Cpmc}}·{{item.Instro}}</p>
+              <span>￥{{item.Price}}</span>
+            </div>
+          </a>
+        </li>        
+      
+      </ul>
+    </section>
+    <div class="scrollbox"></div>
+    <footer class="footer">
+      <p>爱情鲜花专区</p>
+      <span>Copyright © 2005~2019 花礼网(中国鲜花礼品网) 版权所有</span>
+    </footer>
   </div>
 </template>
-
+  
 <script type="text/ecmascript-6">
-export default {
-  methods: {
-    goPath(path){
-      this.$router.replace(path)
-    }
+  import {mapState} from 'vuex'
+
+  export default {
+    methods: {
+      goPath(path){
+        this.$router.replace(path)
+      }
+    },
+    mounted() {
+      console.log(this.$store)
+      this.$store.dispatch('detailList')
+    },
+    computed: {
+      ...mapState({
+        detailList  : state => state.detailList.detailList
+      })
+    },
   }
-};
 </script>
   
-<style lang='stylus' rel='stylesheet/stylus'>
-  .Footer
-    width 100%   
-     
-    .Footer-litter
-      margin 30px 20px
+<style lang="stylus" rel="stylesheet/stylus">
+  #detail
+    width 375px
+    .headerbar
+      background pink 
+      width 100%
+      height 44px
       display flex
       justify-content space-between
-      font-size 15px
-    .Footer-list
-      height 756px
-      background-color #fff 
-      box-sizing border-box 
-      .Footer-item
-        display inline-block
-        width 48%
-        height 243px
-        overflow hidden
-        background-color #fff
-        box-shadow 0px 4px 6px 0px #dee2e5
-        margin 2px 3px  
-        .Footer-item-img
-          height 190px
-          border 0
-          margin 0
-          padding 0
+      .listitem
+        width 88px
+        line-height 44px
+        text-align center 
+        &:nth-child(2)
+          width 196px
+    .filter
+      .filterbox
+        // background blue
+        height 45px
+        display flex
+        justify-content space-around
+        .filteritem
+          width 25vw  
+          text-align center
+          line-height 45px
+    .purposebox
+      background yellow 
+      height 44px
+      .purpose
+        display flex
+        justify-content space-around
+        .purposeitem
+          width 20vw
+          line-height 44px
+          text-align center
+    .product
+      // &::after
+      //   content ''
+      //   display block
+      //   clear both
+      // height 1000px
+      background #ddd
+      .productlist
+        background greenyellow 
+        display flex
+        flex-wrap wrap
+        .productlistitem
+          // float left
           box-sizing border-box
-          img 
-            width 100%
-            vertical-align middle
-        .Footer-item-detail
-          margin 10px
-          box-sizing border-box
-          background-color #fff
-          .Footer-item-name
-            margin-top 4px
-            font-size 7px
-            color #232628
-            white-space nowrap
-          .Footer-item-price
-            margin-top 8px
-            font-size 5px
-            color  #FF734C 
-    .Footer-bottom
-      height 13px
-      margin-top 4px
+          width calc(50vw - 12px)
+          height 269px
+          margin 8px 0 0 8px
+          background #fff
+          // &::after
+          //   content ''
+          //   display block
+          //   clear both
+          a 
+            font-size 12px
+            img
+              width 100%
+              height 195px
+            .text
+              width 159px
+              padding 8px
+              line-height 19px
+              position relative
+              p
+                height 38px
+                display block
+                overflow hidden 
+                // white-space nowrap
+                
+              span 
+                position absolute
+                bottom -14px
+                color #f60
+    .footer
+      height 64px
+      background #fff
+      box-sizing border-box
+      padding 16px 0
       text-align center
-      font-size 4px
-      color #71797F
-      line-height 13px
+      font-size 10px
+      line-height 16px
+      color #ccc
 
-     .discibeContainer
-       font-size 10px
-       display flex
-       flex-direction column 
-       justify-content center
-       align-items center
-       margin-top 50px 
-       font-size 10px
-       color grey 
-       p:nth-child(1)
-         font-size 13px
-         color black 
-       p:nth-child(2)
-         margin 50px 0 20px 0px
+
 </style>

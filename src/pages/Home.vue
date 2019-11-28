@@ -14,7 +14,7 @@
           </div>
         </div>
 
-        <div class="center">
+        <div class="center" >
           <div class="swiper-container">
             <div class="swiper-wrapper">
               <div class="swiper-slide">

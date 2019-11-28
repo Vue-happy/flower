@@ -25,9 +25,14 @@ import Home from '../src/pages/Home'
 import Sort from '../src/pages/Sort'
 import Cart from '../src/pages/Cart'
 import Profile from '../src/pages/Profile'
-import Login from '../src/pages/Login'
+import Login from '../src/pages/Login/Login.vue'
 import Footer from '../src/components/Footer/Footer'
 import Detail from '../src/components/Detail/Detail'
+
+import { AddressEdit } from 'vant';
+
+Vue.use(AddressEdit);
+
 
 // 注册vant全局组件
 import { Field,
@@ -36,7 +41,9 @@ import { Field,
   SwipeItem,
   GoodsAction,
   GoodsActionIcon,
-  GoodsActionButton  } from 'vant';
+  GoodsActionButton,
+  NoticeBar
+} from 'vant';
 import { Tabbar, TabbarItem } from "vant"
 import { NavBar } from 'vant';
 import { Button } from 'vant';
@@ -51,7 +58,7 @@ import { Row, Col } from 'vant';
 
 
 Vue.use(Swipe).use(SwipeItem);
-
+Vue.use(NoticeBar);
 Vue.use(Icon);
 Vue.use(Tabbar).use(TabbarItem);
 Vue.use(NavBar);
