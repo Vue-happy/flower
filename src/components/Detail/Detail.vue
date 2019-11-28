@@ -16,8 +16,8 @@
     <nav class="filter">
       <ul class="filterbox">
         <li class="filteritem">综合</li>
-        <li class="filteritem">销量</li>
-        <li class="filteritem">价格</li>
+        <li class="filteritem" @click="toNum">销量</li>
+        <li class="filteritem" @click="toPrice">价格</li>
         <li class="filteritem">新品</li>
       </ul>
     </nav>
@@ -91,7 +91,7 @@
     toTop(){
       const timer= setInterval(()=> {
         let scrollTop =document.documentElement.scrollTop 
-        var speed = 4*20/3+5
+        var speed = 40
         window.pageYOffset = document.documentElement.scrollTop = document.body.scrollTop =( scrollTop - speed) - 1/50 *( scrollTop - speed)
         console.log(scrollTop)
         if (scrollTop <= 0 ) {
