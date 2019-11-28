@@ -209,6 +209,26 @@
         gotop:false
       }
     },
+    methods:{
+      handleScroll() {
+        let that = this;
+        let scrollTop = document.documentElement.scrollTop 
+          
+        let clientHeight = document.documentElement.clientHeight;
+        that.gotop = scrollTop > clientHeight ? true : false;
+      },
+      toTop(){
+        const timer= setInterval(()=> {
+        let scrollTop = document.documentElement.scrollTop
+
+        var speed = 4*80/3+5
+        window.pageYOffset = document.documentElement.scrollTop = document.body.scrollTop = scrollTop - speed
+        if (scrollTop <= 0 ) {
+            clearInterval(timer)
+          }
+      },30)
+      }
+    },
     async mounted(){
       //轮播
       new Swiper('.swiper-container',{
@@ -218,41 +238,14 @@
           el: '.swiper-pagination',
         },
       })
-      let that = this;
-      that.$nextTick(function() {
-        window.addEventListener("scroll", that.handleScroll);
-      })
-    },
-    methods:{
-      handleScroll() {
-        let that = this;
-        let scrollTop =
-          window.pageYOffset ||
-          document.documentElement.scrollTop ||
-          document.body.scrollTop;
-        let clientHeight = document.documentElement.clientHeight;
-        that.gotop = scrollTop > clientHeight ? true : false;
-      },
-      toTop(){
-        const timer= setInterval(()=> {
-        let scrollTop =
+    let that = this;
+    let scrollTop =
         window.pageYOffset ||
         document.documentElement.scrollTop ||
         document.body.scrollTop;
-        //设置速度差,产生缓动的效果
-        // linear: function (t, b, c, d){
-        // return c*t/d + b;
-
-        // var speed = Math.floor(-scrollTop/6)
-        var speed = 2*80/3+5
-        window.pageYOffset = document.documentElement.scrollTop = document.body.scrollTop = scrollTop - speed
-        if (scrollTop === 0 ) {
-          clearInterval(timer)
-
-        }
-      },30)
-        // window.pageYOffset = document.documentElement.scrollTop = document.body.scrollTop =0;
-      }
+    that.$nextTick(function() {
+      window.addEventListener("scroll", that.handleScroll);
+    });
     },
     computed:{
       ...mapState({
@@ -270,13 +263,10 @@
         width 100%
         height 100%
         .swiper-container
-          // height 100%
           .swiper-wrapper
             width 100%
-            // height 100%
           .swiper-slide
             display flex
-            // height 100%
             justify-content center
             flex-wrap wrap
             img

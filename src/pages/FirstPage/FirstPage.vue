@@ -11,7 +11,7 @@
     </div>
     <Main/>
     <Footer/>
-    <Chat :show="show"> </Chat>
+    <Chat v-if="show" @toChat="toChat"></Chat>
   </div>
 </template>
 
@@ -35,6 +35,11 @@
     async mounted(){
       this.$store.dispatch('getFlowersAction')
     },
+    methods:{
+      toChat(val){
+        this.show = val
+      }
+    }
   }
 </script>
 

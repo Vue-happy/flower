@@ -1,19 +1,56 @@
 <template>
-  <div class="block_main">
-    <van-overlay :show="show" >
+  <div>
+    <div :show="show" >
       <div class="wrapper">
         <div class="block">
           <div class="header">
             <div class="header-title">
-              <span>小洋</span>
+              <span>对方正在输入中...</span>
               <div class="header-right">
                 <i class="iconfont iconxiangxia"></i>
-                <span @click="show = false">关闭</span>
+                <span @click="closeChat">关闭</span>
               </div>
             </div>
           </div>
           <div class="chatContainer">
             <img v-show="isImg" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1574848816328&di=1f1762bc5a80133aed1e2ef0a3ae095e&imgtype=0&src=http%3A%2F%2Fcdn2.ettoday.net%2Fimages%2F1526%2Fd1526867.jpg" alt="" style="width:375px;height:200px;position:absolute;left:0;bottom:-10px">
+            <Comment v-if="isComment"/>
+            <!-- <div id="commentContainer">
+                <div class="comment">
+                  <van-overlay :show="show" @click="show = false">
+                    <div class="wrapper" @click.stop>
+                      <div class="block">
+                        <div class="block_detail">
+                          <div class="blockHeader">
+                            <span>您对本次服务满意吗?</span>
+                            <i class="iconfont iconguanbi" @click="show = false"></i>
+                          </div>
+                          <div class="blockImg">
+                            <div class="blockImg_01">
+                              <i class="iconfont icongood" :class="{active1:isPink}" @click="isPinkActive" ></i>
+                              <span>好评</span>
+                            </div>
+                            <div class="blockImg_02">
+                              <i class="iconfont iconzhongping" :class="{active2:isGreen}" @click="isGreenActive"></i>
+                              <span>中评</span>
+                            </div>
+                            <div class="blockImg_03">
+                              <i class="iconfont iconchaping" :class="{active3:isRed}" @click="isRedActive" ></i>
+                              <span>差评</span>
+                            </div>
+                          </div>
+                          <div class="blockFooter">
+                            <input type="text" placeholder="请填写评价内容(选填)">
+                            <button>提交</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </van-overlay>
+                </div>
+              </div> -->
+            
+            
             <div class="container" style="position:relative">
               <ul>
                 <li class="chatItem">
@@ -31,45 +68,51 @@
           <div class="footer-left">
             <i class="iconfont iconxiaolian" @click="isImg = !isImg"></i>
             <i class="iconfont iconRectangleCopy"></i>
-            <i class="iconfont iconchangyongtubiao-xianxingdaochu-zhuanqu-"></i>
+            <i class="iconfont iconchangyongtubiao-xianxingdaochu-zhuanqu-" @click="isComment=true"></i>
           </div>
           <input type="text" placeholder="请输入"/>
           <span>发送</span>
         </div>
       </div>
-    </van-overlay>
+    </div>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
+  import Comment from '../../components/Comment/Comment'
   import Vue from 'vue'
   import {Overlay} from 'vant'
   Vue.use(Overlay)
   export default {
+    props:['toChat'],
     data() {
       return {
         show: false,
-        isImg:false
+        isImg:false,
+        isComment:false
+      }
+    },
+    components:{
+      Comment
+    },
+    methods:{
+      closeChat(){
+        this.$emit('toChat',false)
       }
     }
   }
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
-#block_main
-  width 100%
-  position fixed
-  z-index 9
-
   .wrapper
     display flex
     align-items center
     justify-content center
-    height 100%
+    height calc(100vh - 30px)
     position fixed
     left 0
-    top 0
-    background-color pink
+    bottom 0
+    z-index 9
     .block 
       width 100%
       height calc(100vh - 100px)
@@ -77,7 +120,7 @@
       .header
         width 100%
         height 60px
-        background-color #ff6600
+        background-color pink
         .header-title
           width 100%
           height 100%
@@ -123,7 +166,6 @@
               box-sizing border-box
               border 1px solid #eeeeee
               border-radius 5px
-
     .footer
       width 375px
       height 50px
