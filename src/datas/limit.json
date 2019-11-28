@@ -1,0 +1,13 @@
+{
+  "Status":"0",
+  "ErrMsg":"null",
+  "DataStatus":"200",
+  "Datas":
+    {"ProductPrices":[
+      {"ItemCode":"9012009","Price":"198","LinePrice":"382","Cpmc":"满天星","Instro":"33枝红玫瑰","sale":"300","discount":"58","imgsrc":"https://img02.hua.com/tuijian/xianshi_9012446.jpg"},      
+      {"ItemCode":"9012009","Price":"236","LinePrice":"382","Cpmc":"我只钟情你","Instro":"33枝红玫瑰","sale":"300","discount":"69","imgsrc":"https://img02.hua.com/tuijian/xianshi_9012223.jpg"},      
+      {"ItemCode":"9012009","Price":"389","LinePrice":"382","Cpmc":"爱在心头","Instro":"33枝红玫瑰","sale":"300","discount":"58","imgsrc":"https://img02.hua.com/tuijian/xianshi_9012089.jpg"},      
+      {"ItemCode":"9012009","Price":"520","LinePrice":"382","Cpmc":"情定巴黎","Instro":"33枝红玫瑰","sale":"300","discount":"52","imgsrc":"https://img02.hua.com/slider/18_youflower_pcsmall.jpg"}
+
+    ]},
+  "HuaSessionId":"null"}

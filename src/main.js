@@ -2,13 +2,16 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
+import VueLazyLoad from 'vue-lazyload'
+import loading from './assets/loading.gif
 
 
 
 import  'lib-flexible/flexible'
 Vue.config.productionTip = false
 
-
+import Comment from './components/Comment/Comment'
+import Chat from './pages/Chat/Chat'
 
 import Home from '../src/pages/Home'
 import Sort from '../src/pages/Sort'
@@ -29,7 +32,7 @@ import { Divider } from 'vant';
 import { Overlay } from 'vant';
 import { DropdownMenu, DropdownItem } from 'vant';
 import { Row, Col } from 'vant';
-
+import {Overlay} from 'vant'
 
 
 Vue.use(Icon);
@@ -42,8 +45,14 @@ Vue.use(Overlay);
 Vue.use(Divider);
 Vue.use(DropdownMenu).use(DropdownItem);
 Vue.use(Row).use(Col);
+Vue.use(Overlay)
+Vue.use(VueLazyLoad,{
+  loading
+})
 
 //Vue全局注册组件的语法:Vue
+Vue.component('Comment',Comment)
+Vue.component('Chat',Chat)
 Vue.component('Home',Home)
 Vue.component('Sort',Sort)
 Vue.component('Cart',Cart)

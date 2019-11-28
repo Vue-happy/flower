@@ -1,5 +1,7 @@
+<<<<<<< HEAD
 import axios from 'axios'
 import qs from 'qs'
+import router from '../router'
 
 // import { BASE_PATH } from '../config'
 // import  { Message  } from 'element-ui';
@@ -16,6 +18,21 @@ instance.interceptors.request.use(config => {
     config.data = qs.stringify(data)
   }
   console.log('携带的参数',config)
+
+
+instance.interceptors.request.use(config => {
+  if(config.method.toUpperCase() === 'POST' && config.data instanceof Object){
+    config.data = qs.stringify(config.data)
+  }
+  let token = localStorage.getItem('token_key')
+  if(config.headers.needToken){
+    if(token){
+      config.headers.authorization = token
+    }else{
+      throw new Error('没有token,请先登录')
+    }
+  }
+>>>>>>> origin/cui
   return config
 })
 
@@ -41,6 +58,4 @@ instance.interceptors.response.use(
   }
 )
 
-
-
-export default instance
+// export default instance
