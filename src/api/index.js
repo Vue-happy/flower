@@ -1,11 +1,9 @@
 import request from './ajax'
+// import ajax from "./ajax";
 
 
 export const reqDetail = () => request.get('/detail')
 
-import ajax from "./ajax";
 
-export const getflowers = () => ajax({
-  url:'/home_flower'
-})
+export const getflowers = () =>  request.get('/home')
 

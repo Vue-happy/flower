@@ -3,15 +3,13 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import VueLazyLoad from 'vue-lazyload'
-import loading from './assets/loading.gif
+import loading from './assets/loading.gif'
 
 
 
 import  'lib-flexible/flexible'
 Vue.config.productionTip = false
 
-import Comment from './components/Comment/Comment'
-import Chat from './pages/Chat/Chat'
 
 import Home from '../src/pages/Home'
 import Sort from '../src/pages/Sort'
@@ -20,6 +18,9 @@ import Profile from '../src/pages/Profile'
 import Login from '../src/pages/Login'
 import Footer from '../src/components/Footer/Footer'
 import Detail from '../src/components/Detail/Detail'
+import Header from './components/Header/Header'
+import Main from './components/Main/Main'
+import Chat from '../src/pages/Chat/Chat'
 
 // 注册vant全局组件
 import { Field,Icon  } from 'vant';
@@ -32,7 +33,6 @@ import { Divider } from 'vant';
 import { Overlay } from 'vant';
 import { DropdownMenu, DropdownItem } from 'vant';
 import { Row, Col } from 'vant';
-import {Overlay} from 'vant'
 
 
 Vue.use(Icon);
@@ -60,6 +60,8 @@ Vue.component('Profile',Profile)
 Vue.component('Login',Login)
 Vue.component('Footer',Footer)
 Vue.component('Detail',Detail)
+Vue.component('Header',Header)
+Vue.component('Main',Main)
 
 new Vue({
   render: h => h(App),

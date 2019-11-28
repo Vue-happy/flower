@@ -239,10 +239,7 @@
         },
       })
     let that = this;
-    let scrollTop =
-        window.pageYOffset ||
-        document.documentElement.scrollTop ||
-        document.body.scrollTop;
+
     that.$nextTick(function() {
       window.addEventListener("scroll", that.handleScroll);
     });
