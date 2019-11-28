@@ -49,6 +49,9 @@
       <p>爱情鲜花专区</p>
       <span>Copyright © 2005~2019 花礼网(中国鲜花礼品网) 版权所有</span>
     </footer>
+    <div id="boxFixed" v-show="isFixed" @click="toTop">
+      自闭boy
+    </div>
   </div>
 </template>
   
@@ -61,13 +64,45 @@
     methods: {
       priceTop(){
         console.log(detailList)
-      }
+      },
+       handleScroll() {
+      let that = this;
+      let scrollTop =document.documentElement.scrollTop 
+      let clientHeight = document.documentElement.clientHeight;
+      // if (scrollTop > clientHeight) {
+      //   that.isFixed = true
+      // }else{
+      //   that.isFixed = false
+      // }
+      that.isFixed = scrollTop > clientHeight ? true : false;
+      console.log(that.isFixed);
+
+      // console.log(1)
+      console.log(
+        document.documentElement.scrollTop,
+        document.body.scrollTop,
+        window.pageYOffset
+      );
+    },
+    toTop(){
+      const timer= setInterval(()=> {
+        let scrollTop =document.documentElement.scrollTop 
+        var speed = 4*5/3+10
+        window.pageYOffset = document.documentElement.scrollTop = document.body.scrollTop = scrollTop - speed
+        console.log(scrollTop)
+        if (scrollTop <= 0 ) {
+          clearInterval(timer)
+        }
+      },10)
+    }
     },
 
     mounted() {
       console.log(this.$store)
       this.$store.dispatch('detailList')
-      
+      that.$nextTick(function() {
+      window.addEventListener("scroll", that.handleScroll);
+    });
     },
     computed: {
       

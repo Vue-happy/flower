@@ -1,6 +1,7 @@
 <template>
   <div class="box1">
-    <div class="box2"></div>
+    <div class="box2">
+    </div>
 
     <div id="boxFixed" v-show="isFixed" @click="toTop">
       自闭boy
@@ -18,10 +19,7 @@ export default {
   methods: {
     handleScroll() {
       let that = this;
-      let scrollTop =
-        window.pageYOffset ||
-        document.documentElement.scrollTop ||
-        document.body.scrollTop;
+      let scrollTop =document.documentElement.scrollTop 
       let clientHeight = document.documentElement.clientHeight;
       // if (scrollTop > clientHeight) {
       //   that.isFixed = true
@@ -39,14 +37,23 @@ export default {
       );
     },
     toTop(){
-      console.log(111)
-      window.pageYOffset = document.documentElement.scrollTop = document.body.scrollTop =0;
-
-        
+      const timer= setInterval(()=> {
+        let scrollTop =document.documentElement.scrollTop 
+        var speed = 4*5/3+10
+        window.pageYOffset = document.documentElement.scrollTop = document.body.scrollTop = scrollTop - speed
+        console.log(scrollTop)
+        if (scrollTop <= 0 ) {
+          clearInterval(timer)
+        }
+      },30)
     }
   },
   mounted() {
     let that = this;
+    let scrollTop =
+        window.pageYOffset ||
+        document.documentElement.scrollTop ||
+        document.body.scrollTop;
     that.$nextTick(function() {
       window.addEventListener("scroll", that.handleScroll);
     });

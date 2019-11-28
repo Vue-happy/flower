@@ -4,6 +4,7 @@ const Cart = () => import('../pages/Cart')
 const Profile = () => import('../pages/Profile')
 const Login = () => import('../pages/Login')
 const Detail = () => import('../components/Detail/Detail')
+const test = () => import('../pages/test')
 
 
 
@@ -12,6 +13,12 @@ export default [
   {
     path:'/home',
     component: Home,
+    meta: {
+      isShowFooterGuide: true
+    }
+  },     {
+    path:'/test',
+    component: test,
     meta: {
       isShowFooterGuide: true
     }
