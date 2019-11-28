@@ -15,7 +15,7 @@ Vue.config.productionTip = false
 
 
 import { Tab, Tabs, Search,} from 'vant';
-
+import './veevalidate'
 
 Vue.use(Tab).use(Tabs);
 Vue.use(Search);
