@@ -8,6 +8,7 @@ const state = {
 const mutations = {
   [SAVE_DETAILLIST](state,detailList){
     state.detailList = detailList
+    console.log(detailList)
   }
 }
 

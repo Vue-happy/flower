@@ -54,13 +54,23 @@
   import {mapState} from 'vuex'
 
   export default {
+
+
+    methods: {
+      priceTop(){
+        console.log(detailList)
+      }
+    },
+
     mounted() {
       console.log(this.$store)
       this.$store.dispatch('detailList')
+      
     },
     computed: {
+      
       ...mapState({
-        detailList  : state => state.detailList.detailList
+        detailList  : state => state.detailList.detailList,
       })
     },
   }
