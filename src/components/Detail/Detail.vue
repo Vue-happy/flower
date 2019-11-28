@@ -2,13 +2,15 @@
   <div id="detail">
     <div class="headerbar">
       <div class="listitem">
-        <a href=""><span><</span></a>
+        <a href=""><span class="iconfont iconfanhui"></span></a>
       </div>
       <div class="listitem">
         <span>爱情鲜花</span>
       </div>
-      <div class="listitem">
-        <span class="iconfont iconcaidan" style="background :red"></span>
+      <div class="listitem tb">
+        <span class="iconfont iconerji icon" ></span>
+        <span class="iconfont iconcaidan icon" ></span>
+
       </div>
     </div>
     <nav class="filter">
@@ -85,12 +87,20 @@
       height 44px
       display flex
       justify-content space-between
+        
       .listitem
         width 88px
         line-height 44px
         text-align center 
         &:nth-child(2)
           width 196px
+      .tb
+        display flex
+        .icon
+          text-align center
+          display block
+          width 44px
+          height 44px
     .filter
       // border-bottom 1px solid #fff
       .filterbox
