@@ -6,6 +6,19 @@ import store from './store'
 import VueLazyLoad from 'vue-lazyload'
 import loading from './assets/loading.gif'
 
+import Comment from './components/Comment/Comment'
+import Chat from './pages/Chat/Chat'
+
+
+import {Overlay} from 'vant'
+
+
+Vue.component('Comment',Comment)
+Vue.component('Chat',Chat)
+
+
+
+Vue.use(Overlay)
 Vue.use(VueLazyLoad,{
   loading
 })

@@ -1,8 +1,7 @@
 <template>
   <div id="commentContainer">
-    <button  @click="show = true">点击</button>
     <div class="comment">
-      <van-overlay :show="show" @click="show = false">
+      <van-overlay :show="show" @click="show = true">
         <div class="wrapper" @click.stop>
           <div class="block">
             <div class="block_detail">
@@ -25,13 +24,14 @@
                 </div>
               </div>
               <div class="blockFooter">
-                <input type="text" placeholder="请填写评价内容(选填)">
-                <button>提交</button>
+                <input type="text" placeholder="请填写评价内容(选填)" v-model="value">
+                <button @click="clearInput">提交</button>
               </div>
             </div>
           </div>
         </div>
       </van-overlay>
+      <button  @click="show = true"></button>
     </div>
   </div>
 </template>
@@ -47,7 +47,8 @@
         show:false,
         isPink:false,
         isGreen:false,
-        isRed:false
+        isRed:false,
+        value:''
       }
     },
     methods:{
@@ -65,6 +66,9 @@
         this.isPink = false,
         this.isGreen = false,
         this.isRed = !this.isRed
+      },
+      clearInput(){
+        this.value = ''
       }
     }
   }
@@ -75,9 +79,6 @@
     width 100%
     position relative
     z-index 10
-    button
-      width 100%
-      height 48px
     .comment
       width 100%
       position fixed
@@ -87,12 +88,6 @@
       display flex
       align-items center
       justify-content center
-      // width 100%
-      // height calc(100vh - 30px)
-      // position fixed
-      // left 0
-      // bottom 0
-      // z-index 9
 
       .block 
         width 100%
@@ -170,4 +165,9 @@
               margin 10px 0 0
               background  #ff6600 
               border none
+      button
+        width 100%
+        height 50px
+        background-color rgba(0,0,0,0)
+        border none
 </style>
