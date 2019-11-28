@@ -9,14 +9,35 @@
         <i class="iconfont iconerji" @click="show = true"></i>
       </div>
     </div>
+    <Main/>
+    <Footer/>
+    <Chat v-if="show" @toChat="toChat"></Chat>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
+  import Header from '../../components/Header/Header'
+  import Main from '../../components/Main/Main'
+  import Footer from '../../components/Footer/Footer'
+  import Chat from '../Chat/Chat'
   export default {
     data(){
       return{
-        show: false,
+        show:false
+      }
+    },
+    components:{
+      Header,
+      Main,
+      Footer,
+      Chat
+    },
+    async mounted(){
+      this.$store.dispatch('getFlowersAction')
+    },
+    methods:{
+      toChat(val){
+        this.show = val
       }
     }
   }
