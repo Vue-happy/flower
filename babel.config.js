@@ -9,10 +9,7 @@ module.exports = {
       libraryDirectory: 'es',
       style: true
     }, 'vant'],
-    ["component"],{
-      "libraryName: 'mint-ui',",
-      "style":true
-    }
+  
   ]
 
 }
