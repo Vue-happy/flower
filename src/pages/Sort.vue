@@ -10,7 +10,7 @@
           <img src="../common/images/sort/remen/rementuijian.jpg" alt />
         </div>
         <div class="w-body">
-          <ul class="w-imgList" @click="goPath('/goods')">
+          <ul class="w-imgList" @click="goPath('/detail')">
             <li class="w-item">
               <img src="../common/images/sort/remen/ia_200001585.jpg" alt />
               <p class="w-describe">送恋人鲜花</p>

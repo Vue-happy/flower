@@ -2,7 +2,7 @@
   <div>
     <div class="header">
       <div class="header-left">
-        <i class="iconfont iconsousuo"></i>
+        <i class="iconfont iconsousuo" @click.prevent="$router.replace('/sort')"></i>
       </div>
       <img src="https://m.hua.com/content/vue/login/static/img/m_hualogo.png" alt="">
       <div class="header-right">

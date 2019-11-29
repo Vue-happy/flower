@@ -20,9 +20,11 @@ import Profile from '../src/pages/Profile'
 import Login from '../src/pages/Login'
 import Footer from '../src/components/Footer/Footer'
 import Detail from '../src/components/Detail/Detail'
+import Comment from '../src/components/Comment/Comment'
 import Header from './components/Header/Header'
 import Main from './components/Main/Main'
 import Chat from '../src/pages/Chat/Chat'
+import Goodes from '../src/pages/Goods'
 
 // 注册vant全局组件
 import { Icon  } from 'vant';
@@ -70,6 +72,7 @@ Vue.component('Footer',Footer)
 Vue.component('Detail',Detail)
 Vue.component('Header',Header)
 Vue.component('Main',Main)
+Vue.component('Goodes',Goodes)
 
 new Vue({
   render: h => h(App),
