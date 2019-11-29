@@ -2,7 +2,7 @@ const Home = () => import('../pages/Home')
 const Sort = () => import('../pages/Sort')
 const Cart = () => import('../pages/Cart')
 const Profile = () => import('../pages/Profile')
-const Login = () => import('../pages/Login')
+const Login = () => import('../pages/Login/Login')
 const Detail = () => import('../components/Detail/Detail')
 const test = () => import('../pages/test')
 import Chat from '../pages/Chat/Chat'

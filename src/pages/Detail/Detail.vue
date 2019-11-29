@@ -3,7 +3,7 @@
 
     <div class="detailHeader">
       <div class="header">
-        <div class="header-left">
+        <div class="header-left"  @click="$router.replace('/home')">
           <i class="iconfont iconarrow-lift"></i>
         </div>
         <img src="https://m.hua.com/content/vue/login/static/img/m_hualogo.png" alt="">
@@ -53,7 +53,8 @@
           el: '.swiper-pagination',
         },
       })
-    }
+    },
+
   }
 </script>
 

@@ -14,7 +14,3 @@ export default {
 </script lang="stylus" rel="stylesheet/stylus">
 
 <style>
-
-<style lang="stylus" scoped>
-
-</style>

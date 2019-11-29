@@ -1,7 +1,7 @@
 <template>
   <div id="detail">
     <div class="headerbar">
-      <div class="listitem tb ">
+      <div class="listitem tb "  @click="$router.replace('/home')">
         <a><span class="icon iconfont iconbackicon1" ></span></a>
       </div>
       <div class="listitem">
