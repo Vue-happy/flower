@@ -4,11 +4,13 @@ import router from './router'
 import store from './store'
 import VueLazyLoad from 'vue-lazyload'
 import loading from './assets/loading.gif'
-
-
-
 import  'lib-flexible/flexible'
+
+
 Vue.config.productionTip = false
+
+
+
 
 
 import Home from '../src/pages/Home'
@@ -33,10 +35,14 @@ import { Divider } from 'vant';
 import { Overlay } from 'vant';
 import { DropdownMenu, DropdownItem } from 'vant';
 import { Row, Col } from 'vant';
+import { Tab, Tabs, Search,} from 'vant';
 
 
 Vue.use(Icon);
 Vue.use(Tabbar).use(TabbarItem);
+
+Vue.use(Tab).use(Tabs);
+Vue.use(Search);
 Vue.use(NavBar);
 Vue.use(Button);
 Vue.use(Toast);
