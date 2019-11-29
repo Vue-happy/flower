@@ -1,17 +1,17 @@
 <template>
   <div>
     <!-- 头部 -->
-   <header class="Header">
-     <div class="Header-left">   
-     </div>
-     <div class="Header-center">
-       <p>购物车</p>
-     </div>
-     <div class="Header-right">    
-       </div> 
-   </header>
+    <header class="Header">
+      <div class="Header-left"></div>
+      <div class="Header-center">
+        <div class="header-left" @click="$router.replace('/home')">
+          <i class="iconfont iconarrow-lift icon"></i>
+        </div>
+      </div>
+      <div class="Header-right"></div>
+    </header>
 
-   <!-- 中部 -->
+    <!-- 中部 -->
     <van-checkbox-group class="card-goods" v-model="checkedGoods">
       <van-checkbox
         class="card-goods__item"
@@ -38,7 +38,7 @@
 </template>
 
 <script>
-import { Checkbox, CheckboxGroup, Card, SubmitBar, Toast } from 'vant';
+import { Checkbox, CheckboxGroup, Card, SubmitBar, Toast } from "vant";
 export default {
   components: {
     [Card.name]: Card,
@@ -48,39 +48,46 @@ export default {
   },
   data() {
     return {
-      checkedGoods: ['1', '2', '3'],
-      goods: [{
-        id: '1',
-        title: '满天星',
-        desc: '33枝红玫瑰',
-        price: 19800,
-        num: 1,
-        thumb: 'https://img02.hua.com/tuijian/xianshi_9012446.jpg'
-      }, {
-        id: '2',
-        title: '我只钟情你',
-        desc: '33枝红玫瑰',
-        price: 23600,
-        num: 1,
-        thumb: 'https://img02.hua.com/tuijian/xianshi_9012223.jpg'
-      }, {
-        id: '3',
-        title: '爱在心头',
-        desc: '33枝红玫瑰',
-        price: 52000,
-        num: 1,
-        thumb: 'https://img02.hua.com/tuijian/xianshi_9012089.jpg'
-      }]
+      checkedGoods: ["1", "2", "3"],
+      goods: [
+        {
+          id: "1",
+          title: "满天星",
+          desc: "33枝红玫瑰",
+          price: 19800,
+          num: 1,
+          thumb: "https://img02.hua.com/tuijian/xianshi_9012446.jpg"
+        },
+        {
+          id: "2",
+          title: "我只钟情你",
+          desc: "33枝红玫瑰",
+          price: 23600,
+          num: 1,
+          thumb: "https://img02.hua.com/tuijian/xianshi_9012223.jpg"
+        },
+        {
+          id: "3",
+          title: "爱在心头",
+          desc: "33枝红玫瑰",
+          price: 52000,
+          num: 1,
+          thumb: "https://img02.hua.com/tuijian/xianshi_9012089.jpg"
+        }
+      ]
     };
   },
   computed: {
     submitBarText() {
       const count = this.checkedGoods.length;
-      return '结算' + (count ? `(${count})` : '');
-     
+      return "结算" + (count ? `(${count})` : "");
     },
     totalPrice() {
-      return this.goods.reduce((total, item) => total + (this.checkedGoods.indexOf(item.id) !== -1 ? item.price : 0), 0);
+      return this.goods.reduce(
+        (total, item) =>
+          total + (this.checkedGoods.indexOf(item.id) !== -1 ? item.price : 0),
+        0
+      );
     }
   },
   methods: {
@@ -88,7 +95,7 @@ export default {
       return (price / 100).toFixed(2);
     },
     onSubmit(path) {
-     this.$router.replace(path)
+      this.$router.replace(path);
       //  checkedGoods = ''
     }
   }
@@ -96,7 +103,16 @@ export default {
 </script>
 
 <style lang="less">
-
+.header-left{
+  width: 375px;
+  height: 44px;
+  .icon{
+    padding: 0 10px;
+    font-size: 20px;
+    line-height: 44px;
+  }
+}
+  
 .card-goods {
   padding: 10px 0;
   background-color: #fff;
@@ -117,7 +133,7 @@ export default {
       margin-top: -10px;
     }
     .van-card__price {
-      color: #FF734C;
+      color: #ff734c;
     }
   }
 }

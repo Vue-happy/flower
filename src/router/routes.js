@@ -5,6 +5,7 @@ const Profile = () => import('../pages/Profile')
 const Login = () => import('../pages/Login/Login')
 const Detail = () => import('../components/Detail/Detail')
 const test = () => import('../pages/test')
+const Order = () => import('../pages/Order')
 import Chat from '../pages/Chat/Chat'
 import Comment from '../components/Comment/Comment'
 
@@ -55,6 +56,12 @@ export default [
   {
     path:'/chat',
     component:Chat,
+    meta: {
+      isShowFooterGuide: false
+    }
+  },  {
+    path:'/order',
+    component:Order,
     meta: {
       isShowFooterGuide: false
     }

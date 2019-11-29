@@ -6,7 +6,7 @@
       @click="goPath('/home')"
     >
       <span>
-        <i class="iconfont icon-home"></i>
+        <i class="iconfont iconhome"></i>
       </span>
       <span>
         首页
@@ -18,7 +18,7 @@
       @click="goPath('/sort')"
     >
       <span>
-        <i class="iconfont icon-fenlei"></i>
+        <i class="iconfont iconfenlei"></i>
       </span>
       <span>
         分类
@@ -30,7 +30,7 @@
       @click="goPath('/cart')"
     >
       <span>
-        <i class="iconfont icon-shop"></i>
+        <i class="iconfont iconshop"></i>
       </span>
       <span>
         购物车
@@ -43,7 +43,7 @@
       @click="goPath('/profile')"
     >
       <span>
-        <i class="iconfont icon-wode"></i>
+        <i class="iconfont iconwode"></i>
       </span>
       <span>
         我的

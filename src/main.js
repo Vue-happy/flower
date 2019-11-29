@@ -36,10 +36,12 @@ import { Overlay } from 'vant';
 import { DropdownMenu, DropdownItem } from 'vant';
 import { Row, Col } from 'vant';
 import { Tab, Tabs, Search,} from 'vant';
+import { AddressEdit } from 'vant';
 
 
 Vue.use(Icon);
 Vue.use(Tabbar).use(TabbarItem);
+Vue.use(AddressEdit);
 
 Vue.use(Tab).use(Tabs);
 Vue.use(Search);
