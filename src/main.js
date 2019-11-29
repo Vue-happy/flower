@@ -9,9 +9,9 @@ import  'lib-flexible/flexible'
 
 Vue.config.productionTip = false
 
+import { Field } from 'mint-ui';
 
-
-
+Vue.component(Field.name, Field);
 
 import Home from '../src/pages/Home'
 import Sort from '../src/pages/Sort'
@@ -25,7 +25,7 @@ import Main from './components/Main/Main'
 import Chat from '../src/pages/Chat/Chat'
 
 // 注册vant全局组件
-import { Field,Icon  } from 'vant';
+import { Icon  } from 'vant';
 import { Tabbar, TabbarItem } from "vant"
 import { NavBar } from 'vant';
 import { Button } from 'vant';
